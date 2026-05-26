@@ -1,8 +1,9 @@
 import { createServer } from "node:http";
+import { createApplication } from "./app/index.js";
 
 function main() {
   try {
-    const server = createServer();
+    const server = createServer(createApplication());
     const PORT: number = 8080;
 
     server.listen(PORT, () => {

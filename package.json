@@ -25,6 +25,6 @@
     "tsc-watch": "^7.2.0"
   },
   "dependencies": {
-    "experss": "0.0.1-security"
+    "express": "^4.22.2"
   }
 }
