@@ -1,15 +1,20 @@
 import express from "express";
 import type { Express } from "express";
 
+import { authRouter } from "./auth/routes.js";
+
 export function createApplication(): Express {
   const app = express();
 
-  // middleware
+  // Middlewares
+  app.use(express.json());
 
-  // routes
+  // Routes
   app.get("/", (req, res) => {
-    res.json({ message: "welcome to chaicode auth service" });
+    return res.json({ message: "Welcome to ChaiCode Auth Service" });
   });
+
+  app.use("/auth", authRouter);
 
   return app;
 }
